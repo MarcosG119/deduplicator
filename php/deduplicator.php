@@ -103,16 +103,15 @@
 
 
   function main(): void {
-    $options = getopt(short_options: "", long_options: ["input_file:", "output_file:", "log::"]);
+    $options = getopt(short_options: "", long_options: ["input_file:", "output_file:"]);
     
     if (!isset($options['input_file']) || !isset($options['output_file'])) {
-        echo "Usage: php script.php --input_file=<input_file> --output_file=<output_file> [--log=<log_file>]\n";
+        echo "Usage: php script.php --input_file=<input_file> --output_file=<output_file>\n";
         exit(1);
     }
 
     $inputFile = $options['input_file'];
     $outputFile = $options['output_file'];
-    $logFile = $options['log'] ?? 'deduplication_log.json';
 
     $data = load_json(file_path: $inputFile);
     $leads = $data['leads'];
@@ -121,11 +120,9 @@
     $deduplicatedData = $result['leads'];
     $changeLog = $result['changeLog'];
 
-    file_put_contents(filename: $outputFile, data: json_encode(value: ["leads" => $deduplicatedData], flags: JSON_PRETTY_PRINT));
-    file_put_contents(filename: $logFile, data: json_encode(value: $changeLog, flags: JSON_PRETTY_PRINT));
+    file_put_contents(filename: $outputFile, data: json_encode(value: ["leads" => $deduplicatedData, "change_log" => $changeLog], flags: JSON_PRETTY_PRINT));
 
     echo "Deduplicated data saved to $outputFile\n";
-    echo "Log saved to $logFile\n";
 }
 
   main();

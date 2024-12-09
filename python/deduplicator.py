@@ -96,7 +96,6 @@ def main():
     parser = argparse.ArgumentParser(description="Deduplicate JSON records.")
     parser.add_argument("input_file", help="Path to input JSON file")
     parser.add_argument("output_file", help="Path to output JSON file")
-    parser.add_argument("--log", help="Path to log file", default="deduplication_log.json")
     args = parser.parse_args()
 
     data = load_json(args.input_file)
@@ -105,13 +104,9 @@ def main():
     deduplicated_data, change_log = deduplicate(leads)
 
     with open(args.output_file, 'w') as output:
-        json.dump({"leads": deduplicated_data}, output, indent=4)
-
-    with open(args.log, 'w') as log_file:
-        json.dump(change_log, log_file, indent=4)
+        json.dump({"leads": deduplicated_data, "changeLog": change_log}, output, indent=4)
 
     print(f"Deduplicated data saved to {args.output_file}")
-    print(f"Log saved to {args.log}")
 
 
 if __name__ == '__main__':

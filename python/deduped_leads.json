@@ -43,13 +43,13 @@
         {
             "_id": "ganggang1234",
             "email": "boo@bar.com",
-            "firstName": "MarcosGarcia",
-            "lastName": "Anthony",
+            "firstName": "Anthony",
+            "lastName": "Garkia",
             "address": "123 Street St",
-            "entryDate": "2014-05-07T17:34:22+00:00"
+            "entryDate": "2014-05-07T17:34:21+00:00"
         }
     ],
-    "change_log": [
+    "changeLog": [
         {
             "source": {
                 "_id": "jkj238238jdsnfsj23",
@@ -187,6 +187,41 @@
                     "field": "entryDate",
                     "from": "2014-05-07T17:31:20+00:00",
                     "to": "2014-05-07T17:33:20+00:00"
+                }
+            ]
+        },
+        {
+            "source": {
+                "_id": "ganggang1234",
+                "email": "boo@bar.com",
+                "firstName": "MarcosGarcia",
+                "lastName": "Anthony",
+                "address": "123 Street St",
+                "entryDate": "2014-05-07T17:34:20+00:00"
+            },
+            "updated": {
+                "_id": "ganggang1234",
+                "email": "boo@bar.com",
+                "firstName": "Anthony",
+                "lastName": "Garkia",
+                "address": "123 Street St",
+                "entryDate": "2014-05-07T17:34:21+00:00"
+            },
+            "changes": [
+                {
+                    "field": "firstName",
+                    "from": "MarcosGarcia",
+                    "to": "Anthony"
+                },
+                {
+                    "field": "lastName",
+                    "from": "Anthony",
+                    "to": "Garkia"
+                },
+                {
+                    "field": "entryDate",
+                    "from": "2014-05-07T17:34:20+00:00",
+                    "to": "2014-05-07T17:34:21+00:00"
                 }
             ]
         },
