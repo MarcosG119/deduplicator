@@ -79,22 +79,6 @@
       "lastName": "Smith",
       "address": "888 Mayberry St",
       "entryDate": "2014-05-07T17:33:20+00:00"
-    },
-    {
-      "_id": "ganggang1234",
-      "email": "boo@bar.com",
-      "firstName":  "MarcosGarcia",
-      "lastName": "Anthony",
-      "address": "123 Street St",
-      "entryDate": "2014-05-07T17:34:20+00:00"
-    },
-    {
-      "_id": "ganggang1234",
-      "email": "boo@bar.com",
-      "firstName":  "Anthony",
-      "lastName": "Garkia",
-      "address": "123 Street St",
-      "entryDate": "2014-05-07T17:34:21+00:00"
     }
   ]
 }
