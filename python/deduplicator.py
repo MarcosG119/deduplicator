@@ -77,6 +77,8 @@ def deduplicate(data, keys=['email', '_id']):
     
     This approach is more understandable and easier to debug. If the data set is very large, this approach may not be the best one. It also allows for deduplicating by any key we desire, as the keys are passed as arguments.
     
+    This approach would also allow for an improvement in being able to pick by what parameters we decide which records to keep. We can add comparison and other key parameters like entryDate, firstName, etc where we can decide which record to keep based on the comparison of these parameters. For example, maybe we want to choose the record with the most recent entryDate, or the record with the longest firstName, etc. This would be easy to implement with this approach. I also know Marketo has a feature to choose which record to keep based on certain fields when deduplicating leads, so this approach would allow for that kind of customization.
+    
     args:
         data: list: array of dictionaries
         keys: list: keys to deduplicate by
